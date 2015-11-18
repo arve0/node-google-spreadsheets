@@ -13,21 +13,26 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+  "browser": {
+    "request": "browser-request"
+  },
   "dependencies": {
     "request": "^2.65.0",
     "semver": "^5.0.3"
   },
   "devDependencies": {
+    "browser-request": "^0.3.3",
     "browserify": "^12.0.1",
     "googleapis": "^2.1.6",
     "istanbul": "^0.4.0",
     "mocha": "^2.3.3",
+    "mochify": "^2.14.2",
     "should": "^7.1.1",
     "uglifyjs": "*"
   },
   "scripts": {
     "build": "browserify --standalone Spreadsheets lib/spreadsheets.js -o lib/spreadsheets.browser.js && uglifyjs lib/spreadsheets.browser.js -o lib/spreadsheets.browser.min.js",
-    "test": "istanbul test _mocha"
+    "test": "istanbul test _mocha && mochify"
   },
   "jshintConfig": {
     "node": true,
