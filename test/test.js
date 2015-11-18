@@ -2,7 +2,11 @@
 
 var assert = require("assert");
 var GoogleSpreadsheets = require("../lib/spreadsheets");
-var google = require("googleapis");
+try {
+  var google = require("googleapis");
+} catch(e) {
+  console.log("Not testing googleapis.")
+}
 require("should");
 
 describe("google-spreadsheets", function() {
