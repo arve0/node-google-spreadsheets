@@ -1,0 +1,25 @@
+<html>
+<script src="../lib/spreadsheets.browser.js"></script>
+<script>
+
+Spreadsheets.cells({
+  key: "0ApDvWFF4RPZBdEFucnJya1hxVG9wZzhJQWZUWkpfekE",
+  worksheet: 1,
+}, function(err, rows) {
+  if (err) {
+    prettyPrint({error: err});
+    return;
+  }
+  prettyPrint(rows);
+});
+
+function prettyPrint(obj) {
+  document.querySelector("#main").innerText = JSON.stringify(obj, null, "  ");
+}
+
+</script>
+<body>
+<p>Result:</p>
+<pre id="main"></pre>
+</body>
+</html>
